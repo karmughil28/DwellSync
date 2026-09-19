@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Details — DwellSync</title>
+  <link rel="stylesheet" href="css/complaint-details.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <svg class="brand-logo-svg" width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="11" fill="#1f4d45"/><path d="M24 8L10 16V36L24 44L38 36V16L24 8Z" stroke="#c89b5c" stroke-width="2.5" stroke-linejoin="round"/><path d="M24 8V44" stroke="#c89b5c" stroke-width="1.8" stroke-dasharray="2 3"/><path d="M10 16L24 24L38 16" stroke="#c89b5c" stroke-width="2.5" stroke-linejoin="round"/><circle cx="24" cy="24" r="5" fill="#c89b5c"/><path d="M24 20V28" stroke="#1f4d45" stroke-width="2" stroke-linecap="round"/><path d="M20 24H28" stroke="#1f4d45" stroke-width="2" stroke-linecap="round"/></svg>
+        <div><div class="brand-title">DwellSync</div><span class="badge badge-confirmed" style="font-size:10px;">Portal</span></div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="profile.html" class="nav-item">My Profile</a>
+        <a href="maintenance.html" class="nav-item active">Maintenance</a>
+        <a href="community-chat.html" class="nav-item">Community Chat</a>
+        <a href="announcements.html" class="nav-item">Announcements</a>
+        <a href="javascript:void(0)" onclick="logoutUser()" class="nav-item" style="color:var(--color-danger);margin-top:auto;">Logout</a>
+      </nav>
+    </aside>
+    <main class="main-viewport">
+      <div class="content-container" id="detailsContainer">
+        <div class="page-header"><div><h1 class="page-title">Complaint #<span id="complaintId">—</span></h1><p class="page-subtitle"><span id="complaintCategory">—</span> &bull; Flat <span id="complaintFlat">—</span> &bull; Submitted <span id="complaintDate">—</span></p></div><span class="badge" id="complaintStatusBadge">Pending</span></div>
+        <div class="timeline-card"><div class="stepper"><div class="step-item" id="step-0"><div class="step-circle">1</div><span class="step-label">Pending</span></div><div class="step-item" id="step-1"><div class="step-circle">2</div><span class="step-label">In Progress</span></div><div class="step-item" id="step-2"><div class="step-circle">3</div><span class="step-label">Completed</span></div><div class="step-item" id="step-3"><div class="step-circle">4</div><span class="step-label">Confirmed</span></div><div class="step-item" id="step-4"><div class="step-circle">5</div><span class="step-label">Closed</span></div></div></div>
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px;">
+          <div class="card"><div class="card-header"><h2 class="card-title" id="complaintTitle">—</h2><span id="complaintPriority" class="priority-pill">—</span></div><div class="card-body"><p id="complaintDesc" style="white-space:pre-wrap;line-height:1.7;"></p><div id="photoContainer" style="display:none;margin-top:16px;"><img id="complaintPhoto" style="max-width:100%;max-height:300px;border-radius:8px;border:1px solid #e2e8f0;"></div><div id="residentConfirmBox" style="display:none;margin-top:24px;padding:16px;background:var(--color-success-bg);border:1px solid #99f6e4;border-radius:8px;"><p style="margin-bottom:12px;font-weight:600;color:var(--color-success);">Work completed. Please confirm satisfaction.</p><button class="btn btn-primary" id="btnConfirmCompletion">Confirm Completion</button></div></div></div>
+          <div class="card"><div class="card-header"><h2 class="card-title">Audit History</h2></div><div class="card-body"><ul class="audit-history-list" id="historyList"></ul></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint-details.js"></script>
+</body>
+</html>
