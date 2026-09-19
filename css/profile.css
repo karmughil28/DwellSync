@@ -1,0 +1,3 @@
+@import url('style.css');
+.profile-layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 800px) { .profile-layout-grid { grid-template-columns: 1fr; } }
